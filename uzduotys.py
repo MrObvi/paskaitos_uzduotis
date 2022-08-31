@@ -1,10 +1,11 @@
 import datetime
 while True:
     try:
-        uzduotis = int(input("""Pasirinkite uzduoti: 
+        uzduotis = int(input("""Pasirinkite programa: 
         1-Suzinoti ar ivestas skaicius sveikas, 
         2-Atimti iš dabartinės datos ir laiko 5 dienas
-        3-Suzinoti kiek laiko praejo nuo jusu gimtadienio \n"""))
+        3-Suzinoti kiek laiko praejo nuo jusu gimtadienio
+        4-Suzinokite ar metai yra kelemieji ar ne\n"""))
 
         if uzduotis == 1:
             print("Suzinoti ar ivestas skaicius sveikas")
@@ -41,7 +42,6 @@ while True:
                 break
             now = datetime.datetime.today()
             print(f"Dabartinis laikas: ({now}")
-
             rezultatas = now - gimtadienis
 
             print(f"Praejo metu: {now.year - gimtadienis.year}")
@@ -54,5 +54,24 @@ while True:
             print(f"Praejo minuciu: {round(rezultatas.total_seconds() / 60)}")
             print(f"Praejo sekundziu: {round(rezultatas.total_seconds())}")
 
+
+
+        if uzduotis == 4:
+            print("Suzinokite ar metai yra kelemieji ar ne")
+            def ar_klemieji():
+                metai = int(input("Iveskite metus:"))
+
+                if metai % 400 == 0 and metai % 100 == 0:
+                    print("Kelemieji metai")
+                elif metai % 4 == 0 and metai % 100 != 0:
+                    print("Kelemieji metai")
+                else:
+                    print("Nekelemieji metai")
+                return metai
+
+
+            ar_klemieji()
+
     except:
-        print("Nera tokios uzduoties")
+        print("Nera tokios programos")
+
