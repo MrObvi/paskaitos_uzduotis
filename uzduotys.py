@@ -3,11 +3,11 @@ while True:
     try:
         uzduotis = int(input("""Pasirinkite uzduoti: 
         1-Suzinoti ar ivestas skaicius sveikas, 
-        2-Atimts iš dabartinės datos ir laiko 5 dienas
+        2-Atimti iš dabartinės datos ir laiko 5 dienas
         3-Suzinoti kiek laiko praejo nuo jusu gimtadienio \n"""))
 
         if uzduotis == 1:
-            print("Pirma uzduotis")
+            print("Suzinoti ar ivestas skaicius sveikas")
             try:
                 sveikas_skaicius = int(input("Iveskite skaiciu:")) > 0
                 if sveikas_skaicius == True:
@@ -19,7 +19,7 @@ while True:
                 print("Ivedete ne skaiciu")
 
         if uzduotis == 2:
-            print("Antra uzduotis")
+            print("Atimtis iš dabartinės datos ir laiko 5 dienas")
             now=datetime.datetime.today()
             print(now)
             print(now - datetime.timedelta(days=5))
@@ -28,7 +28,7 @@ while True:
 
         if uzduotis == 3:
 
-            print("Trecia uzduotis")
+            print("Suzinoti kiek laiko praejo nuo jusu gimtadienio")
             try:
                 gimtadienis_ivedimas=input("Iveskite tikslia gimimo data bei laika tokiu formatu 2000-00-00  :")
                 gimtadienis = datetime.datetime.strptime(gimtadienis_ivedimas, "%Y-%m-%d")
@@ -56,12 +56,3 @@ while True:
 
     except:
         print("Nera tokios uzduoties")
-
-
-
-
-
-
-
-
-
