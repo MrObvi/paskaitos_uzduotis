@@ -1,19 +1,18 @@
-import datetime
+import modules.praejo_nuo_gimtadienio as praejo_laiko
 import modules.triukai_su_sarasai as uz8
-
+import modules.biudzetas as biudzetas
+import modules.kelemieji_nekelemieji as nekelemieji
+import datetime
 
 while True:
     try:
-
-
-
         uzduotis = int(input("""Pasirinkite programa: 
         1-Suzinoti ar ivestas skaicius sveikas, 
         2-Atimti iš dabartinės datos ir laiko 5 dienas
         3-Suzinoti kiek laiko praejo nuo jusu gimtadienio
         4-Suzinokite ar metai yra kelemieji ar ne
-        5.Triukai su Sarasais Uzduotys\n"""))
-
+        5.Triukai su Sarasais Uzduotys
+        6.BIUDZETO PROGRAMA\n"""))
 
         if uzduotis == 1:
             print("Suzinoti ar ivestas skaicius sveikas")
@@ -23,7 +22,6 @@ while True:
                     print("Skaicius yra sveikas")
                 else:
                     print("Skaicius yra nesveikas")
-
             except:
                 print("Ivedete ne skaiciu")
 
@@ -36,53 +34,16 @@ while True:
             print(now.strftime("%Y %m %d %X "))
 
         if uzduotis == 3:
-
-            print("Suzinoti kiek laiko praejo nuo jusu gimtadienio")
-            try:
-                gimtadienis_ivedimas=input("Iveskite tikslia gimimo data bei laika tokiu formatu 2000-00-00  :")
-                gimtadienis = datetime.datetime.strptime(gimtadienis_ivedimas, "%Y-%m-%d")
-                print(f"Tavo gimtadienis: {gimtadienis}")
-                # Palikta testavimui
-                # gimtadienis = datetime.datetime(1991,6,30,0,0,0)
-
-            except:
-                print("Neteisingai ivedete data ar laika")
-                break
-            now = datetime.datetime.today()
-            print(f"Dabartinis laikas: ({now}")
-            rezultatas = now - gimtadienis
-
-            print(f"Praejo metu: {now.year - gimtadienis.year}")
-            print()
-            print(f"Praejo menesiu: {round(rezultatas.total_seconds() / 2629746)}")
-            print(f"Praejo menesiu: {rezultatas.days/30}")
-            print(f"Praejo dienu: {round(rezultatas.total_seconds() / 86400)}")
-            print(f"Praejo dienu: {rezultatas.days}")
-            print(f"Praejo valandu: {round(rezultatas.total_seconds() / 3600)}")
-            print(f"Praejo minuciu: {round(rezultatas.total_seconds() / 60)}")
-            print(f"Praejo sekundziu: {round(rezultatas.total_seconds())}")
-
-
+            praejo_laiko.praejo_laiko()
 
         if uzduotis == 4:
-            print("Suzinokite ar metai yra kelemieji ar ne")
-            def ar_klemieji():
-                metai = int(input("Iveskite metus:"))
+            nekelemieji.ar_kelemieji()
 
-                if metai % 400 == 0 and metai % 100 == 0:
-                    print("Kelemieji metai")
-                elif metai % 4 == 0 and metai % 100 != 0:
-                    print("Kelemieji metai")
-                else:
-                    print("Nekelemieji metai")
-                return metai
-
-
-            ar_klemieji()
         if uzduotis == 5:
             uz8.triukai()
 
-
+        if uzduotis == 6:
+            biudzetas.biudzetas()
 
     except:
         print("Nera tokios programos")
