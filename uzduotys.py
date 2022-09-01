@@ -1,11 +1,19 @@
 import datetime
+import modules.triukai_su_sarasai as uz8
+
+
 while True:
     try:
+
+
+
         uzduotis = int(input("""Pasirinkite programa: 
         1-Suzinoti ar ivestas skaicius sveikas, 
         2-Atimti iš dabartinės datos ir laiko 5 dienas
         3-Suzinoti kiek laiko praejo nuo jusu gimtadienio
-        4-Suzinokite ar metai yra kelemieji ar ne\n"""))
+        4-Suzinokite ar metai yra kelemieji ar ne
+        5.Triukai su Sarasais Uzduotys\n"""))
+
 
         if uzduotis == 1:
             print("Suzinoti ar ivestas skaicius sveikas")
@@ -71,6 +79,10 @@ while True:
 
 
             ar_klemieji()
+        if uzduotis == 5:
+            uz8.triukai()
+
+
 
     except:
         print("Nera tokios programos")
