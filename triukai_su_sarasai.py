@@ -1,10 +1,10 @@
-
+from operator import attrgetter
 from statistics import median,mean
 variantas=int(input("""Pasirinkite uzduoti
 1. Prie kiekvieno sakinio "The Zen of Python" žodžio pridės šauktuką ir atspausdins naują sakinį.
 2. Uzduotys su sarasais
-3.
-4.
+3. Saraso sutvarkymas: [2.5, 2, "Labas", True, 5, 7, 8, 2.8, "Vakaras"]
+4. sorted, attrgetter, reverse, funkciją rep
 """))
 
 if variantas==1:
@@ -83,24 +83,26 @@ if variantas==4:
                 self.vardas=vardas
                 self.amzius=amzius
             def __repr__(self):
-                print(self.vardas,self.amzius)
+               return f"{self.vardas},{self.amzius})"
 
+            def rusiuoti(zmogeliukas):
+                return zmogeliukas.vardas
 
-        zmogus_sarasas = []
-        zmogus1 = Zmogus("Paulius", 10)
-        zmongus2 = Zmogus("Jonas", 5)
+        zmogus1 = Zmogus("Paulius", 5)
+        zmogus2 = Zmogus("Jonas", 10)
+        zmogus3 = Zmogus("Tadas", 25)
+        zmogus4 = Zmogus("Kristijonas", 35)
+        zmogus5 = Zmogus("Azuolas", 99)
+        zmogus_sarasas = [zmogus1, zmogus2, zmogus3, zmogus4, zmogus5]
 
-        zmogus_sarasas.append(zmogus1.vardas)
-        zmogus_sarasas.append(zmongus2.vardas)
-        zmogus_sarasas.append(zmogus1.amzius)
-        zmogus_sarasas.append(zmongus2.amzius)
-
-
-
-
-        print(zmogus_sarasas)
-
-
+        surusiuotas1=sorted(zmogus_sarasas, key=Zmogus.rusiuoti)
+        print(surusiuotas1)
+        surusiuotas = sorted(zmogus_sarasas, key=attrgetter("amzius"))
+        print(surusiuotas)
+        surusiuotas2 = sorted(zmogus_sarasas, key=Zmogus.rusiuoti, reverse=True)
+        print(surusiuotas2)
+        surusiuotas3 = sorted(zmogus_sarasas, key=attrgetter("amzius"), reverse=True)
+        print(surusiuotas3)
 
 
     except:
