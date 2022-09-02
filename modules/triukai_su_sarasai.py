@@ -40,6 +40,8 @@ def triukai():
                         pridet_sauktuka = map(lambda x: x + "!", sakinys.split())
                         naujas_sakinys = " ".join(pridet_sauktuka)
                         print(naujas_sakinys)
+
+                        # Variantas: print(" ".join([x + "!" for x in sakinys.split()]))
                     except:
                         print("klaida")
 
@@ -50,7 +52,7 @@ def triukai():
         if variantas==2:
             try:
 
-                sarasas=[ x + 1 for x in range(0,50)]
+                sarasas=[ x for x in range(0,51)]
                 print("Sukurtų sąrašą iš skaičių nuo 0 iki 50 \n",sarasas)
                 sarasas2 = [x * 10 for x in sarasas]
                 print("Padaugintų visus sąrašo skaičius iš 10 ir atspausdintų \n", sarasas2)
@@ -76,7 +78,7 @@ def triukai():
                 saraso_zodziai = [x for x in sarasas6 if type(x) is str]
                 zodziu_sujungimas = " ".join(saraso_zodziai)
                 print("Paskaičiuotų ir atspausdintų visų sąrašo skaičių sumą", zodziu_sujungimas)
-                boolen_suma = sum([x for x in sarasas6 if type(x) is bool(True)])
+                boolen_suma = sum([x for x in sarasas6 if type(x) is bool])
                 print("Suskaičiuotų ir atspausdintų, kiek sąraše yra loginių (boolean) kintamųjų su True reikšme", boolen_suma)
 
             except:
@@ -89,7 +91,7 @@ def triukai():
                         self.vardas=vardas
                         self.amzius=amzius
                     def __repr__(self):
-                       return f"{self.vardas},{self.amzius})"
+                       return f"Zmogus vardu {self.vardas},{self.amzius} amziaus)"
 
                     def rusiuoti(zmogeliukas):
                         return zmogeliukas.vardas
