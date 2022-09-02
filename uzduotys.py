@@ -2,6 +2,8 @@ import modules.praejo_nuo_gimtadienio as praejo_laiko
 import modules.triukai_su_sarasai as uz8
 import modules.biudzetas as biudzetas
 import modules.kelemieji_nekelemieji as nekelemieji
+# import modules.grafine_sasaja as grafine
+
 import datetime
 
 while True:
@@ -17,8 +19,8 @@ while True:
         if uzduotis == 1:
             print("Suzinoti ar ivestas skaicius sveikas")
             try:
-                sveikas_skaicius = int(input("Iveskite skaiciu:")) > 0
-                if sveikas_skaicius == True:
+                sveikas_skaicius = float(input("Iveskite skaiciu:"))
+                if sveikas_skaicius.is_integer():
                     print("Skaicius yra sveikas")
                 else:
                     print("Skaicius yra nesveikas")
@@ -44,6 +46,11 @@ while True:
 
         if uzduotis == 6:
             biudzetas.biudzetas()
+
+        # if uzduotis == 7:
+        #     grafine.grafine_sasaja()
+        #
+
 
     except:
         print("Nera tokios programos")
