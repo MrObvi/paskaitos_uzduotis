@@ -2,6 +2,7 @@ import modules.praejo_nuo_gimtadienio as praejo_laiko
 import modules.triukai_su_sarasai as uz8
 import modules.biudzetas as biudzetas
 import modules.kelemieji_nekelemieji as nekelemieji
+import modules.biudzetas_su_pickle as pickle_biudzetas
 # import modules.grafine_sasaja as grafine
 
 import datetime
@@ -14,7 +15,8 @@ while True:
         3-Suzinoti kiek laiko praejo nuo jusu gimtadienio
         4-Suzinokite ar metai yra kelemieji ar ne
         5.Triukai su Sarasais Uzduotys
-        6.BIUDZETO PROGRAMA\n"""))
+        6.BIUDZETO PROGRAMA
+        7.BIUDZETO PROGRAMA SU PICKLE\n"""))
 
         if uzduotis == 1:
             print("Suzinoti ar ivestas skaicius sveikas")
@@ -47,9 +49,8 @@ while True:
         if uzduotis == 6:
             biudzetas.biudzetas()
 
-        # if uzduotis == 7:
-        #     grafine.grafine_sasaja()
-        #
+        if uzduotis == 7:
+            pickle_biudzetas.biudzetas_picle()
 
 
     except:
