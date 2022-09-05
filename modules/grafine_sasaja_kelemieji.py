@@ -16,7 +16,7 @@ def ar_klemieji():
     else:
         rezultatas["text"] = "Nekelemieji metai"
         print("Nekelemieji metai")
-
+    ivestis.delete(0, 'end')
 
 metu_lable=Label(text="Iveskite metus")
 ivestis=Entry()
